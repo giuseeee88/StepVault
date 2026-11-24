@@ -36,7 +36,6 @@ a {
   padding: 0 20px;
 }
 
-/* Header & Navigation */
 .site-header {
   background: var(--slate-950);
   color: #ffffff;
@@ -125,7 +124,6 @@ a {
   border-color: #a7f3d0;
 }
 
-/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -165,7 +163,6 @@ a {
   border-radius: 8px;
 }
 
-/* Hero */
 .hero {
   padding: 56px 0 42px;
   text-align: center;
@@ -195,7 +192,6 @@ a {
   margin-bottom: 36px;
 }
 
-/* Editor UI Preview */
 .editor-frame {
   max-width: 840px;
   margin: 0 auto;
@@ -345,7 +341,6 @@ a {
   box-shadow: 0 3px 8px rgba(15, 23, 42, 0.3);
 }
 
-/* Content Sections */
 .section {
   padding: 48px 0;
 }
@@ -383,7 +378,6 @@ a {
   color: var(--slate-500);
 }
 
-/* Pricing */
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -450,7 +444,6 @@ a {
   font-weight: 800;
 }
 
-/* Legal Subpages (Privacy & Terms) */
 .legal-header-inner {
   max-width: 720px;
   margin: 0 auto;
@@ -496,7 +489,6 @@ a {
   color: var(--rose-600);
 }
 
-/* Footer */
 .site-footer {
   border-top: 1px solid var(--slate-200);
   padding: 26px 0;
