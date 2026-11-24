@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-title-key="page_title_terms">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,40 +13,46 @@
     <div class="legal-header-inner">
       <a href="./index.html" class="legal-brand">
         <img src="./assets/logo.svg" alt="StepVault logo" class="brand-icon-sm" />
-        <span>StepVault — Local SOP &amp; Guide Recorder</span>
+        <span data-i18n="legal_header_brand">StepVault — Local SOP &amp; Guide Recorder</span>
       </a>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn active" data-set-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-set-lang="it" aria-pressed="false">IT</button>
+      </div>
     </div>
   </header>
   <main class="legal-wrap">
-    <p><a class="accent-link" href="./index.html">← Back to home</a></p>
-    <h1>Terms of Service &amp; Refund Policy</h1>
-    <p><em>Last updated: November 2026</em></p>
+    <p><a class="accent-link" href="./index.html" data-i18n="back_home">← Back to home</a></p>
+    <h1 data-i18n="terms_h1">Terms of Service &amp; Refund Policy</h1>
+    <p data-i18n-html="legal_updated"><em>Last updated: November 2026</em></p>
 
-    <h2>License</h2>
-    <p>
+    <h2 data-i18n="terms_s1_h2">License</h2>
+    <p data-i18n-html="terms_s1_p">
       StepVault Free is available free of charge. Purchasing <strong>StepVault Pro — Lifetime
       License</strong> grants a non-exclusive license to activate Pro features on up to 3 browser
       instances per license key.
     </p>
 
-    <h2>Billing &amp; Taxes</h2>
-    <p>
+    <h2 data-i18n="terms_s2_h2">Billing &amp; Taxes</h2>
+    <p data-i18n-html="terms_s2_p">
       Payments and invoicing are processed by our Merchant of Record, <strong>Polar.sh</strong>,
       which handles payment processing and applicable VAT/sales taxes.
     </p>
 
-    <h2>Refund Policy</h2>
-    <p>
+    <h2 data-i18n="terms_s3_h2">Refund Policy</h2>
+    <p data-i18n-html="terms_s3_p">
       If StepVault Pro does not function as described, you may request a full refund within
       <strong>14 days of purchase</strong> by contacting <a class="accent-link" href="mailto:giuseppecaut57@gmail.com">giuseppecaut57@gmail.com</a>
       with your order receipt.
     </p>
 
-    <h2>Local Storage Notice</h2>
-    <p>
+    <h2 data-i18n="terms_s4_h2">Local Storage Notice</h2>
+    <p data-i18n-html="terms_s4_p">
       Because StepVault stores guides solely in your local browser storage, please export JSON or
       PDF backups before clearing browser data or uninstalling the extension.
     </p>
   </main>
+
+  <script src="./i18n.js"></script>
 </body>
 </html>

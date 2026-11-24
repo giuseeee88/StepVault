@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-title-key="page_title_home">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>StepVault — Local SOP &amp; Guide Recorder</title>
-  <meta name="description" content="Record step-by-step guides &amp; SOPs locally. Auto-highlight clicks, instant PII blur redaction, and PDF, HTML &amp; Markdown export." />
+  <title>StepVault — Local SOP &amp; Step-by-Step Guide Recorder</title>
+  <meta name="description" content="Record step-by-step SOPs &amp; visual guides 100% locally in Chrome &amp; Firefox. Smart zoom crops, 1-click PII pixelation, and branded PDF, HTML &amp; Markdown exports for €19 one-time." />
   <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
   <link rel="alternate icon" type="image/png" href="./assets/favicon.png" />
   <link rel="stylesheet" href="./styles.css" />
@@ -16,54 +16,67 @@
         <img src="./assets/logo.svg" alt="StepVault logo" class="brand-icon" />
         <div>
           <div class="brand-title">StepVault</div>
-          <div class="brand-sub">Local SOP &amp; Guide Recorder</div>
+          <div class="brand-sub" data-i18n="brand_sub">Local SOP &amp; Guide Recorder</div>
         </div>
       </a>
 
       <nav class="nav-right">
-        <span class="local-pill hide-mobile">Local Vault</span>
-        <a href="#features" class="link hide-mobile">Features</a>
-        <a href="#pricing" class="link">Pricing</a>
-        <a href="https://buy.polar.sh/polar_cl_2rsAa7R232uoczY5hBs9cqjbtkQprgrgDu8nz12qWkz" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Get Pro</a>
+        <span class="local-pill hide-mobile" data-i18n="nav_pill">100% Local Vault</span>
+        <a href="#how-it-works" class="link hide-mobile" data-i18n="nav_how">How It Works</a>
+        <a href="#why-pro" class="link hide-mobile" data-i18n="nav_why_pro">Why Pro</a>
+        <a href="#pricing" class="link" data-i18n="nav_pricing">Pricing</a>
+        <a href="#faq" class="link hide-mobile" data-i18n="nav_faq">FAQ</a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-btn active" data-set-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" data-set-lang="it" aria-pressed="false">IT</button>
+        </div>
+        <a href="https://buy.polar.sh/polar_cl_2rsAa7R232uoczY5hBs9cqjbtkQprgrgDu8nz12qWkz" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" data-i18n="nav_cta">Get Pro — €19</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
+    <!-- Hero -->
     <section class="hero">
-      <span class="local-pill local-pill-light">
-        Chrome &amp; Firefox Extension • Zero Cloud Uploads
+      <span class="local-pill local-pill-light" data-i18n="hero_pill">
+        Chrome, Edge, Brave &amp; Firefox • Zero Cloud Uploads • No Subscriptions
       </span>
-      <h1>Record step-by-step SOPs locally, without leaking private data.</h1>
-      <p class="subtitle">
-        Click through any workflow. <strong>StepVault</strong> captures smart-cropped screenshots, highlights every click, auto-blurs sensitive PII instantly, and exports clean PDF, HTML &amp; Markdown guides directly in your browser.
+      <h1 data-i18n="hero_title">Turn any browser workflow into a clean, redacted SOP in 60 seconds.</h1>
+      <p class="subtitle" data-i18n-html="hero_subtitle">
+        Click through your task once. <strong>StepVault</strong> automatically captures smart-cropped screenshots, writes step instructions in English or Italian, pixelates sensitive PII on your device, and exports client-ready <strong>PDF, HTML &amp; Markdown</strong> guides.
       </p>
       <div class="cta-row">
-        <a href="https://buy.polar.sh/polar_cl_2rsAa7R232uoczY5hBs9cqjbtkQprgrgDu8nz12qWkz" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buy Pro Lifetime License — €19</a>
-        <a href="#features" class="btn btn-secondary">Explore Features</a>
+        <a href="https://buy.polar.sh/polar_cl_2rsAa7R232uoczY5hBs9cqjbtkQprgrgDu8nz12qWkz" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="hero_cta_primary">Buy Pro Lifetime License — €19</a>
+        <a href="#how-it-works" class="btn btn-secondary" data-i18n="hero_cta_secondary">See How It Works</a>
       </div>
+      <p class="hero-trust" data-i18n="hero_trust">
+        Pay once, own forever • Up to 3 browsers per key • 14-day money-back guarantee via Polar.sh
+      </p>
 
-      <div class="editor-frame" aria-label="StepVault Local Guide Editor">
+      <div class="editor-frame" aria-label="StepVault Local Guide Editor Preview">
         <div class="editor-topbar">
           <div class="swatches">
-            Accent:
+            <span data-i18n="mock_accent">Accent:</span>
             <span class="swatch swatch-rose active"></span>
             <span class="swatch swatch-indigo"></span>
             <span class="swatch swatch-sky"></span>
             <span class="swatch swatch-emerald"></span>
           </div>
-          <span class="amber-pill">Auto-Blur All PII</span>
-          <span class="export-chip">Export (PDF / HTML / MD)</span>
+          <span class="amber-pill" data-i18n="mock_autoblur">Auto-Blur All PII (4 detected)</span>
+          <span class="export-chip" data-i18n="mock_export">Export (PDF / HTML / ZIP / MD)</span>
         </div>
         <div class="editor-canvas">
           <div class="step-card">
             <div class="step-head">
-              <span class="step-badge" aria-hidden="true"></span>
-              <span>Click the "Export CSV Report" button</span>
+              <span class="step-num-badge" aria-hidden="true">1</span>
+              <span data-i18n="mock_step_title">Click the "Export CSV Report" button</span>
+            </div>
+            <div class="step-callout-mini" data-i18n-html="mock_tip">
+              <strong>Tip:</strong> Double-check the quarterly billing filter before downloading the ledger.
             </div>
             <div class="shot-box">
               <div class="shot-fields">
-                Email: <span class="pixelated">mario.rossi@corp.it</span> &nbsp;•&nbsp;
+                <span data-i18n="mock_customer">Customer:</span> <span class="pixelated">mario.rossi@corp.it</span> &nbsp;•&nbsp;
                 IBAN: <span class="pixelated">IT60X0542811101000</span>
               </div>
               <span class="target-btn">
@@ -76,68 +89,334 @@
       </div>
     </section>
 
-    <section id="features" class="section">
-      <h2 class="section-title">Built for privacy-conscious teams &amp; freelancers</h2>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Smart Capture &amp; Auto-Crop</h3>
-          <p>Records clicks, inputs, and dropdowns across tabs with focused zoom crops and highlighted click rings.</p>
+    <!-- How It Works -->
+    <section id="how-it-works" class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" data-i18n="how_eyebrow">How StepVault Works</span>
+        <h2 class="section-title" data-i18n="how_title">From live browser clicks to polished documentation in 4 steps</h2>
+        <p class="section-lead" data-i18n="how_lead">
+          No video editing, no manual screenshot cropping, and no uploading confidential client screens to third-party servers.
+        </p>
+      </div>
+
+      <div class="workflow-grid">
+        <div class="workflow-card">
+          <div class="workflow-step-top">
+            <span class="step-num-badge">1</span>
+            <h3 data-i18n="how_1_title">Hit Record</h3>
+          </div>
+          <p data-i18n-html="how_1_body">
+            Open the StepVault popup on any web app, choose <strong>English or Italian</strong> step descriptions, and perform your procedure as usual.
+          </p>
         </div>
-        <div class="card">
-          <h3>Instant Local PII Blur</h3>
-          <p>Automatically detects emails, IBANs, tax IDs, cards, passwords, and API keys on screen and pixelates them locally.</p>
+
+        <div class="workflow-card">
+          <div class="workflow-step-top">
+            <span class="step-num-badge">2</span>
+            <h3 data-i18n="how_2_title">Auto-Capture &amp; Mask</h3>
+          </div>
+          <p data-i18n-html="how_2_body">
+            Clicks, form inputs, and dropdowns are captured across tabs. Passwords and API tokens are masked at source (<code>••••••••</code>) while a floating Shadow-DOM HUD tracks progress without appearing in your shots.
+          </p>
         </div>
-        <div class="card">
-          <h3>PDF, HTML &amp; Markdown</h3>
-          <p>Export branded PDFs, standalone offline HTML files, or Markdown + image ZIP bundles with zero cloud lock-in.</p>
+
+        <div class="workflow-card">
+          <div class="workflow-step-top">
+            <span class="step-num-badge">3</span>
+            <h3 data-i18n="how_3_title">Polish &amp; Redact</h3>
+          </div>
+          <p data-i18n-html="how_3_body">
+            Open the full-tab Local Editor to reorder steps, add <strong>Tip / Warning / Info</strong> callouts, switch between Smart Zoom Crop and Full Viewport, and pixelate sensitive areas.
+          </p>
+        </div>
+
+        <div class="workflow-card">
+          <div class="workflow-step-top">
+            <span class="step-num-badge">4</span>
+            <h3 data-i18n="how_4_title">Flatten &amp; Share</h3>
+          </div>
+          <p data-i18n-html="how_4_body">
+            Redactions are permanently baked into exported JPEG pixels so hidden data can never be recovered. Export to branded <strong>PDF, offline HTML, ZIP, or Markdown</strong> in one click.
+          </p>
         </div>
       </div>
     </section>
 
+    <!-- Core Architecture & Features -->
+    <section id="features" class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" data-i18n="feat_eyebrow">Local-First Engine</span>
+        <h2 class="section-title" data-i18n="feat_title">Built for privacy-conscious teams, agencies &amp; consultants</h2>
+        <p class="section-lead" data-i18n="feat_lead">
+          Document internal ERPs, banking portals, AWS/Cloud consoles, healthcare systems, and client admin panels with complete GDPR peace of mind.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3 data-i18n="feat_1_title">Smart Zoom Crop &amp; Click Rings</h3>
+          <p data-i18n="feat_1_body">Automatically frames the action around every click with numbered badges and highlight rings — or switch any step to full-screen view non-destructively.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="feat_2_title">Deep Local PII Detection</h3>
+          <p data-i18n-html="feat_2_body">Scans visible text and inputs on-device for <strong>Emails, IBANs, Luhn-verified Credit Cards, Tax IDs, Phone Numbers, JWTs, and API Keys</strong>.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="feat_3_title">EN &amp; IT Step Generation</h3>
+          <p data-i18n="feat_3_body">Extracts accessible labels, button names, placeholders, and select options to write clear instructions automatically in English or Italian.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="feat_4_title">Interactive Canvas Annotator</h3>
+          <p data-i18n-html="feat_4_body">Draw custom <strong>Pixelate Blur</strong>, <strong>Solid Blackout</strong>, or <strong>Highlight</strong> boxes directly on any screenshot with instant undo.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="feat_5_title">Section Headers &amp; Callouts</h3>
+          <p data-i18n="feat_5_body">Break complex SOPs into logical sections and attach highlighted Tip, Warning, or Info banners so teammates never miss critical prerequisites.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="feat_6_title">100% Offline IndexedDB Vault</h3>
+          <p data-i18n-html="feat_6_body">Guides live inside your browser's local IndexedDB storage with full <code>.stepvault.json</code> backup and restore — zero accounts, zero telemetry.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Upgrade to Pro -->
+    <section id="why-pro" class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" data-i18n="pro_eyebrow">Why StepVault Pro</span>
+        <h2 class="section-title" data-i18n="pro_title">Everything you need to deliver client-ready SOPs — for less than one month of a cloud tool</h2>
+        <p class="section-lead" data-i18n-html="pro_lead">
+          StepVault Free lets you record and copy text steps forever. Upgrading to <strong>StepVault Pro (€19 one-time)</strong> turns your browser into a complete, white-label documentation studio.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="pro-spotlight-card">
+          <div class="pro-spotlight-head">
+            <h3 data-i18n="pro_1_title">Branded A4 PDF &amp; Standalone HTML</h3>
+            <span class="pro-pill">Pro</span>
+          </div>
+          <p data-i18n-html="pro_1_body">
+            Generate print-ready A4 PDFs complete with dark cover headers, numbered visual steps, color-coded callouts, and page footers — or export a <strong>single offline <code>.html</code> file</strong> clients can open in any browser without accounts or logins.
+          </p>
+          <div class="pro-benefit-note" data-i18n="pro_1_note">✓ Ready to send to clients, new hires, or compliance auditors immediately</div>
+        </div>
+
+        <div class="pro-spotlight-card">
+          <div class="pro-spotlight-head">
+            <h3 data-i18n="pro_2_title">1-Click Auto-Blur All PII</h3>
+            <span class="pro-pill">Pro</span>
+          </div>
+          <p data-i18n-html="pro_2_body">
+            Recording a 20-step billing or CRM workflow? Instead of manually blurring customer emails, IBANs, and keys screenshot by screenshot, click <strong>Auto-Blur All PII</strong> once to redact the entire guide simultaneously.
+          </p>
+          <div class="pro-benefit-note" data-i18n="pro_2_note">✓ Saves 15–30 minutes of tedious manual redaction per guide</div>
+        </div>
+
+        <div class="pro-spotlight-card">
+          <div class="pro-spotlight-head">
+            <h3 data-i18n="pro_3_title">Notion, GitHub &amp; Confluence ZIP Bundles</h3>
+            <span class="pro-pill">Pro</span>
+          </div>
+          <p data-i18n-html="pro_3_body">
+            Export a structured <code>.zip</code> containing <code>guide.md</code>, <code>guide.html</code>, and cleanly numbered <code>images/step-01.jpg</code> files — or a single self-contained <code>.md</code> file with embedded images for wikis and Git repos.
+          </p>
+          <div class="pro-benefit-note" data-i18n="pro_3_note">✓ Zero vendor lock-in — your docs live wherever your team works</div>
+        </div>
+
+        <div class="pro-spotlight-card">
+          <div class="pro-spotlight-head">
+            <h3 data-i18n="pro_4_title">Custom Company &amp; Agency Branding</h3>
+            <span class="pro-pill">Pro</span>
+          </div>
+          <p data-i18n-html="pro_4_body">
+            Replace the default StepVault label with your own <strong>company, agency, or department name</strong> across PDF cover headers, page footers, and HTML hero banners, paired with your brand's accent color.
+          </p>
+          <div class="pro-benefit-note" data-i18n="pro_4_note">✓ Deliver polished handover manuals under your own brand identity</div>
+        </div>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="compare-wrap" aria-label="Comparison between StepVault Pro, Cloud SOP Subscriptions, and Manual Screenshots">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th data-i18n="cmp_col_1">What matters</th>
+              <th class="col-highlight" data-i18n="cmp_col_2">StepVault Pro</th>
+              <th data-i18n="cmp_col_3">Cloud SOP SaaS (Scribe, Tango…)</th>
+              <th data-i18n="cmp_col_4">Manual Screenshots + Docs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-i18n-html="cmp_r1_c1"><strong>Cost over 2 years</strong></td>
+              <td class="col-highlight" data-i18n="cmp_r1_c2">€19 once (€0/yr after)</td>
+              <td class="muted" data-i18n="cmp_r1_c3">€550 – €840+ per user</td>
+              <td class="muted" data-i18n="cmp_r1_c4">€0 (costs hours of your time)</td>
+            </tr>
+            <tr>
+              <td data-i18n-html="cmp_r2_c1"><strong>Where screenshots go</strong></td>
+              <td class="col-highlight" data-i18n="cmp_r2_c2">100% local in your browser</td>
+              <td class="muted" data-i18n="cmp_r2_c3">Uploaded to external vendor cloud</td>
+              <td class="muted" data-i18n="cmp_r2_c4">Local, scattered on desktop</td>
+            </tr>
+            <tr>
+              <td data-i18n-html="cmp_r3_c1"><strong>GDPR &amp; client NDA safety</strong></td>
+              <td class="col-highlight" data-i18n="cmp_r3_c2">Zero cloud DPA needed</td>
+              <td class="muted" data-i18n="cmp_r3_c3">Requires vendor review &amp; DPA</td>
+              <td class="muted" data-i18n="cmp_r3_c4">High risk of forgetting a blur</td>
+            </tr>
+            <tr>
+              <td data-i18n-html="cmp_r4_c1"><strong>Sensitive PII redaction</strong></td>
+              <td class="col-highlight" data-i18n="cmp_r4_c2">1-click Auto-Blur + flattened pixels</td>
+              <td class="muted" data-i18n="cmp_r4_c3">Paid add-on tier (often €30+/mo)</td>
+              <td class="muted" data-i18n="cmp_r4_c4">Manual box-by-box in image editor</td>
+            </tr>
+            <tr>
+              <td data-i18n-html="cmp_r5_c1"><strong>Time to create a 15-step SOP</strong></td>
+              <td class="col-highlight" data-i18n="cmp_r5_c2">~1 minute</td>
+              <td class="muted" data-i18n="cmp_r5_c3">~2 minutes (requires cloud sync)</td>
+              <td class="muted" data-i18n="cmp_r5_c4">35 – 45 minutes</td>
+            </tr>
+            <tr>
+              <td data-i18n-html="cmp_r6_c1"><strong>Offline access &amp; file ownership</strong></td>
+              <td class="col-highlight" data-i18n="cmp_r6_c2">Full PDF, HTML, MD &amp; ZIP files</td>
+              <td class="muted" data-i18n="cmp_r6_c3">Hosted links break if you cancel</td>
+              <td class="muted" data-i18n="cmp_r6_c4">Manual Word / Google Doc</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Pricing -->
     <section id="pricing" class="section">
-      <h2 class="section-title">Pay once, own it forever</h2>
+      <div class="section-header">
+        <span class="section-eyebrow" data-i18n="price_eyebrow">Pricing</span>
+        <h2 class="section-title" data-i18n="price_title">Pay once, own it forever</h2>
+        <p class="section-lead" data-i18n="price_lead">
+          One saved afternoon of manual screenshot editing already pays for StepVault Pro several times over.
+        </p>
+      </div>
+
       <div class="pricing-grid">
         <div class="price-card">
           <div>
-            <div class="tier">Free</div>
-            <div class="amount">€0 <span>forever</span></div>
+            <div class="tier" data-i18n="free_tier">StepVault Free</div>
+            <div class="amount" data-i18n-html="free_amount">€0 <span>forever</span></div>
+            <p class="tier-desc" data-i18n="free_desc">Ideal for personal notes &amp; testing the local recorder.</p>
             <ul class="features-list">
-              <li>Unlimited local guide recording</li>
-              <li>Smart crop &amp; manual blur tool</li>
-              <li>Copy steps as plain Markdown</li>
-              <li>Offline browser IndexedDB vault</li>
+              <li data-i18n="free_f1">Unlimited local guide recording (EN &amp; IT)</li>
+              <li data-i18n="free_f2">Smart zoom crop &amp; numbered click markers</li>
+              <li data-i18n="free_f3">Manual blur, blackout &amp; highlight canvas tools</li>
+              <li data-i18n="free_f4">Copy step instructions as plain Markdown</li>
+              <li data-i18n="free_f5">Local IndexedDB vault &amp; JSON backup/import</li>
             </ul>
           </div>
-          <a href="#features" class="btn btn-secondary">Chrome &amp; Firefox</a>
+          <a href="#how-it-works" class="btn btn-secondary" data-i18n="free_btn">Available for Chrome &amp; Firefox</a>
         </div>
 
         <div class="price-card pro">
+          <span class="popular-badge" data-i18n="pro_popular">Best Value • Lifetime</span>
           <div>
-            <div class="tier">StepVault Pro — Lifetime License</div>
-            <div class="amount">€19 <span>one-time</span></div>
+            <div class="tier" data-i18n="pro_tier">StepVault Pro — Lifetime License</div>
+            <div class="amount" data-i18n-html="pro_amount">€19 <span>one-time</span></div>
+            <p class="tier-desc" data-i18n="pro_desc">Full visual export suite &amp; automated PII redaction. No recurring fees.</p>
             <ul class="features-list">
-              <li>Branded PDF &amp; standalone HTML export</li>
-              <li>Markdown + Images (.zip) bundle</li>
-              <li>Automatic blur for all detected PII</li>
-              <li>Custom company/agency header label</li>
-              <li>Multi-device browser license activation</li>
+              <li data-i18n-html="pro_f1"><strong>Everything in Free</strong>, plus:</li>
+              <li data-i18n-html="pro_f2"><strong>Branded A4 PDF export</strong> with cover &amp; page footers</li>
+              <li data-i18n-html="pro_f3"><strong>Standalone offline HTML</strong> single-file guides</li>
+              <li data-i18n-html="pro_f4"><strong>Markdown + Images (<code>.zip</code>)</strong> &amp; embedded <code>.md</code></li>
+              <li data-i18n-html="pro_f5"><strong>1-Click Auto-Blur All PII</strong> across every step</li>
+              <li data-i18n-html="pro_f6"><strong>Custom company / agency</strong> header &amp; footer label</li>
+              <li data-i18n-html="pro_f7"><strong>Activate on up to 3 browsers</strong> (switch anytime)</li>
+              <li data-i18n-html="pro_f8"><strong>Lifetime updates</strong> &amp; 14-day refund guarantee</li>
             </ul>
           </div>
-          <a href="https://buy.polar.sh/polar_cl_2rsAa7R232uoczY5hBs9cqjbtkQprgrgDu8nz12qWkz" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Buy Lifetime License</a>
+          <div>
+            <a href="https://buy.polar.sh/polar_cl_2rsAa7R232uoczY5hBs9cqjbtkQprgrgDu8nz12qWkz" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%;" data-i18n="pro_btn">Buy Pro Lifetime License — €19</a>
+            <p class="price-footnote" data-i18n="pro_footnote">Instant license key delivery &amp; VAT invoice via Polar.sh</p>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="section-header">
+        <span class="section-eyebrow" data-i18n="faq_eyebrow">FAQ</span>
+        <h2 class="section-title" data-i18n="faq_title">Frequently asked questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary data-i18n="faq_q1">Is €19 really a one-time payment, with no subscription?</summary>
+          <p data-i18n="faq_a1">
+            Yes. You pay €19 once and receive a permanent Lifetime License key. There are no monthly renewals, per-guide limits, or cloud storage fees — because all processing runs on your own machine.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary data-i18n="faq_q2">Do my screenshots or client data ever touch an external server?</summary>
+          <p data-i18n="faq_a2">
+            Never. Screenshots, DOM labels, PII scans, and PDF/HTML/ZIP exports are processed 100% locally inside your browser and stored in local IndexedDB. The only network request StepVault ever makes is verifying your license key string with Polar.sh.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary data-i18n="faq_q3">Can someone remove the blur or recover redacted text from exported files?</summary>
+          <p data-i18n="faq_a3">
+            No. Before exporting to PDF, HTML, Markdown, or ZIP, StepVault permanently flattens pixelation and solid blackout boxes directly into the JPEG image bitmap. The underlying sensitive pixels are overwritten and cannot be reversed.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary data-i18n="faq_q4">How many devices can I activate, and what if I buy a new computer?</summary>
+          <p data-i18n-html="faq_a4">
+            Each Pro license key lets you activate up to <strong>3 browser instances simultaneously</strong> (for example, work desktop, laptop, and Firefox). You can click <em>"Deactivate on this browser"</em> anytime inside the extension to free up a slot for a new machine, and your key remains valid for life.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary data-i18n="faq_q5">Does StepVault Pro work offline?</summary>
+          <p data-i18n="faq_a5">
+            Yes. Recording, smart cropping, PII detection, editing, and exporting all work completely offline. Once your license is activated, StepVault keeps Pro unlocked during offline travel or isolated network sessions.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary data-i18n="faq_q6">Can I get a business VAT invoice, and what is the refund policy?</summary>
+          <p data-i18n-html="faq_a6">
+            Checkout is handled by <strong>Polar.sh</strong> (our Merchant of Record), which automatically provides tax/VAT-compliant invoices for companies and freelancers worldwide. If StepVault Pro doesn't fit your workflow, email us within <strong>14 days of purchase</strong> for a full refund.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Bottom Closing CTA -->
+    <section class="cta-banner">
+      <span class="local-pill" data-i18n="banner_pill">Private by Design • Owned Forever</span>
+      <h2 data-i18n="banner_title">Stop paying €300+/year to upload private workflows to the cloud.</h2>
+      <p data-i18n="banner_body">
+        Get unlimited branded PDF, HTML, ZIP &amp; Markdown SOP exports plus 1-click local PII redaction for a single €19 payment.
+      </p>
+      <div class="cta-row" style="margin-bottom: 0;">
+        <a href="https://buy.polar.sh/polar_cl_2rsAa7R232uoczY5hBs9cqjbtkQprgrgDu8nz12qWkz" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="banner_cta">Unlock StepVault Pro — €19 One-Time</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>© StepVault — Local SOP &amp; Guide Recorder.</div>
+      <div data-i18n="footer_copy">© StepVault — Local SOP &amp; Guide Recorder.</div>
       <div class="footer-links">
-        <a href="./privacy.html">Privacy Policy</a>
-        <a href="./terms.html">Terms &amp; Refunds</a>
-        <a href="mailto:giuseppecaut57@gmail.com">Contact Support</a>
+        <a href="./privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="./terms.html" data-i18n="footer_terms">Terms &amp; Refunds</a>
+        <a href="mailto:giuseppecaut57@gmail.com" data-i18n="footer_support">Contact Support</a>
       </div>
     </div>
   </footer>
+
+  <script src="./i18n.js"></script>
 </body>
 </html>

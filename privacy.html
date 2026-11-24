@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-title-key="page_title_privacy">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,38 +13,44 @@
     <div class="legal-header-inner">
       <a href="./index.html" class="legal-brand">
         <img src="./assets/logo.svg" alt="StepVault logo" class="brand-icon-sm" />
-        <span>StepVault — Local SOP &amp; Guide Recorder</span>
+        <span data-i18n="legal_header_brand">StepVault — Local SOP &amp; Guide Recorder</span>
       </a>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn active" data-set-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-set-lang="it" aria-pressed="false">IT</button>
+      </div>
     </div>
   </header>
   <main class="legal-wrap">
-    <p><a class="accent-link" href="./index.html">← Back to home</a></p>
-    <h1>Privacy Policy</h1>
-    <p><em>Last updated: November 2026</em></p>
+    <p><a class="accent-link" href="./index.html" data-i18n="back_home">← Back to home</a></p>
+    <h1 data-i18n="priv_h1">Privacy Policy</h1>
+    <p data-i18n-html="legal_updated"><em>Last updated: November 2026</em></p>
 
-    <h2>Local Data Processing</h2>
-    <p>
+    <h2 data-i18n="priv_s1_h2">Local Data Processing</h2>
+    <p data-i18n-html="priv_s1_p">
       StepVault is a local-first browser extension. All screenshots, recorded steps, text
       descriptions, PII detections, and exported files (PDF, HTML, Markdown, ZIP) are processed
       and stored <strong>exclusively on your device</strong> inside your browser's local IndexedDB
       storage.
     </p>
 
-    <h2>Zero Data Collection</h2>
+    <h2 data-i18n="priv_s2_h2">Zero Data Collection</h2>
     <ul>
-      <li>We do <strong>not</strong> collect, transmit, or store your browsing history, screenshots, or guide contents on external servers.</li>
-      <li>We do <strong>not</strong> embed analytics, trackers, or third-party advertising scripts.</li>
+      <li data-i18n-html="priv_s2_li1">We do <strong>not</strong> collect, transmit, or store your browsing history, screenshots, or guide contents on external servers.</li>
+      <li data-i18n-html="priv_s2_li2">We do <strong>not</strong> embed analytics, trackers, or third-party advertising scripts.</li>
     </ul>
 
-    <h2>License Key Verification</h2>
-    <p>
+    <h2 data-i18n="priv_s3_h2">License Key Verification</h2>
+    <p data-i18n-html="priv_s3_p">
       Checkout and invoicing for StepVault Pro are handled by our Merchant of Record,
-      <strong>Polar.sh</strong>. When activating a Pro license key, only the license key string and
+      <strong>Polar.sh</strong>. When activating or verifying a Pro license key, only the license key string and
       a device label are sent to Polar's API to validate activation.
     </p>
 
-    <h2>Contact</h2>
-    <p>Questions? Contact <a class="accent-link" href="mailto:giuseppecaut57@gmail.com">giuseppecaut57@gmail.com</a>.</p>
+    <h2 data-i18n="priv_s4_h2">Contact</h2>
+    <p data-i18n-html="priv_s4_p">Questions? Contact <a class="accent-link" href="mailto:giuseppecaut57@gmail.com">giuseppecaut57@gmail.com</a>.</p>
   </main>
+
+  <script src="./i18n.js"></script>
 </body>
 </html>
