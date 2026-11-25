@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://giuseeee88.github.io/StepVault/sitemap.xml
