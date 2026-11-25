@@ -187,21 +187,36 @@
       back_home: '← Back to home',
       legal_updated: '<em>Last updated: November 2026</em>',
 
-      priv_h1: 'Privacy Policy',
-      priv_s1_h2: 'Local Data Processing',
+      priv_h1: 'Privacy Policy & GDPR Notice',
+      priv_s1_h2: '1. Data Controller (Art. 13(1)(a) GDPR)',
       priv_s1_p:
-        'StepVault is a local-first browser extension. All screenshots, recorded steps, text descriptions, PII detections, and exported files (PDF, HTML, Markdown, ZIP) are processed and stored <strong>exclusively on your device</strong> inside your browser\'s local IndexedDB storage.',
-      priv_s2_h2: 'Zero Data Collection',
+        'The Data Controller for StepVault is the StepVault Developer, reachable for any privacy or GDPR request at <a class="accent-link" href="mailto:giuseppecaut57@gmail.com">giuseppecaut57@gmail.com</a>.',
+      priv_s2_h2: '2. Local-Only Extension Processing (Privacy by Design — Art. 25 GDPR)',
       priv_s2_li1:
-        'We do <strong>not</strong> collect, transmit, or store your browsing history, screenshots, or guide contents on external servers.',
+        '<strong>100% On-Device Vault:</strong> All screenshots, recorded steps, DOM labels, sanitized URLs, PII redaction boxes, and exported files (PDF, HTML, Markdown, ZIP, JSON) are processed and stored <strong>exclusively on your device</strong> inside your browser\'s local IndexedDB storage.',
       priv_s2_li2:
-        'We do <strong>not</strong> embed analytics, trackers, or third-party advertising scripts.',
-      priv_s3_h2: 'License Key Verification',
-      priv_s3_p:
-        'Checkout and invoicing for StepVault Pro are handled by our Merchant of Record, <strong>Polar.sh</strong>. When activating or verifying a Pro license key, only the license key string and a device label are sent to Polar\'s API to validate activation.',
-      priv_s4_h2: 'Contact',
+        '<strong>Zero Cloud Collection:</strong> We do <strong>not</strong> collect, transmit, access, or store your browsing history, screenshots, form inputs, or guide contents on any server. Password, OTP, CVV, and API token fields are masked at source (<code>••••••••</code>), and sensitive URL query tokens are automatically redacted.',
+      priv_s2_li3:
+        '<strong>Free Tier Network Isolation:</strong> StepVault Free performs <strong>zero</strong> external network requests.',
+      priv_s3_h2: '3. Purposes, Legal Bases & External Recipients (Art. 6 & Art. 13 GDPR)',
+      priv_s3_li1:
+        '<strong>Pro Checkout &amp; Invoicing (Art. 6(1)(b) &amp; 6(1)(c) GDPR):</strong> Purchases of StepVault Pro are processed by our Merchant of Record, <strong>Polar Software Inc. (Polar.sh)</strong>, which independently handles payment details, billing email, and statutory VAT/tax compliance.',
+      priv_s3_li2:
+        '<strong>Pro License Activation &amp; Validation (Art. 6(1)(b) &amp; 6(1)(f) GDPR):</strong> When you activate or revalidate a Pro license key, the extension connects over HTTPS solely to <code>api.polar.sh</code> (enforced by a strict browser Content Security Policy), sending only the license key string, organization ID, activation ID, and generic extension label to enforce the 3-browser activation limit.',
+      priv_s3_li3:
+        '<strong>Website Hosting &amp; Support (Art. 6(1)(b) &amp; 6(1)(f) GDPR):</strong> This static website is hosted on <strong>GitHub Pages</strong> (GitHub Inc.), which processes standard technical HTTP logs (IP address) for security and delivery. Support emails sent voluntarily to <a class="accent-link" href="mailto:giuseppecaut57@gmail.com">giuseppecaut57@gmail.com</a> are used solely to reply to your inquiry.',
+      priv_s4_h2: '4. Cookies, Local Storage & Zero Trackers (ePrivacy Art. 5(3))',
       priv_s4_p:
-        'Questions? Contact <a class="accent-link" href="mailto:giuseppecaut57@gmail.com">giuseppecaut57@gmail.com</a>.',
+        'Neither the StepVault extension nor this website uses profiling cookies, analytics trackers, advertising pixels, or external font CDNs (only local system fonts are used, preventing IP leaks). On this website, a technical <code>localStorage</code> preference (<code>stepvault_site_lang</code>) is saved <strong>only</strong> if you explicitly click the EN/IT language switcher.',
+      priv_s5_h2: '5. International Transfers & Data Retention (Art. 13(2)(a) & Art. 44–49 GDPR)',
+      priv_s5_p:
+        'Where Polar Software Inc. or GitHub Inc. process technical or billing data in the United States, transfers rely on the <strong>EU-U.S. Data Privacy Framework (DPF)</strong> and/or European Commission <strong>Standard Contractual Clauses (SCCs, Art. 46 GDPR)</strong>. Local guides remain on your device until you delete them (via the in-app <em>Privacy &amp; GDPR → Delete All Data</em> button or by uninstalling the extension). Billing records are retained by Polar.sh for the statutory tax period; support emails are deleted within 12 months.',
+      priv_s6_h2: '6. Your GDPR Rights & Supervisory Authority (Art. 15–22 & Art. 77 GDPR)',
+      priv_s6_p:
+        'Under the GDPR, you have the right of <strong>access (Art. 15)</strong>, <strong>rectification (Art. 16)</strong>, <strong>erasure / "right to be forgotten" (Art. 17)</strong>, <strong>restriction (Art. 18)</strong>, <strong>data portability (Art. 20)</strong>, and <strong>objection (Art. 21)</strong>. For local guides, you can exercise instant portability (JSON/ZIP export) and instant erasure directly inside StepVault\'s <em>Privacy &amp; GDPR Controls</em> panel. For license or support data, contact <a class="accent-link" href="mailto:giuseppecaut57@gmail.com">giuseppecaut57@gmail.com</a>. You also have the right to lodge a complaint with your national EU Data Protection Authority (in Italy: <em>Garante per la protezione dei dati personali</em> — <a class="accent-link" href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">garanteprivacy.it</a>).',
+      priv_s7_h2: '7. User Responsibility When Recording Third-Party Data',
+      priv_s7_p:
+        'When documenting workflows that display personal data of clients, employees, or third parties, you act as the independent controller of the exported files. Always review screenshots and apply StepVault\'s irreversible pixelation/blackout tools before sharing exported PDF, HTML, or Markdown guides externally.',
 
       terms_h1: 'Terms of Service & Refund Policy',
       terms_s1_h2: 'License',
@@ -404,21 +419,36 @@
       back_home: '← Torna alla home',
       legal_updated: '<em>Ultimo aggiornamento: Novembre 2026</em>',
 
-      priv_h1: 'Informativa sulla Privacy',
-      priv_s1_h2: 'Elaborazione Locale dei Dati',
+      priv_h1: 'Informativa sulla Privacy e GDPR',
+      priv_s1_h2: '1. Titolare del Trattamento (Art. 13, par. 1, lett. a GDPR)',
       priv_s1_p:
-        'StepVault è un\'estensione browser progettata in modalità local-first. Tutti gli screenshot, i passaggi registrati, le descrizioni testuali, i rilevamenti PII e i file esportati (PDF, HTML, Markdown, ZIP) vengono elaborati e archiviati <strong>esclusivamente sul tuo dispositivo</strong> nel database locale IndexedDB del browser.',
-      priv_s2_h2: 'Zero Raccolta Dati',
+        'Il Titolare del trattamento per StepVault è lo Sviluppatore di StepVault, contattabile per qualsiasi richiesta in materia di privacy o esercizio dei diritti GDPR all\'indirizzo <a class="accent-link" href="mailto:giuseppecaut57@gmail.com">giuseppecaut57@gmail.com</a>.',
+      priv_s2_h2: '2. Elaborazione Esclusivamente Locale nell\'Estensione (Privacy by Design — Art. 25 GDPR)',
       priv_s2_li1:
-        '<strong>Non</strong> raccogliamo, trasmettiamo né salviamo cronologia di navigazione, screenshot o contenuti delle guide su server esterni.',
+        '<strong>Archivio 100% sul Dispositivo:</strong> Tutti gli screenshot, i passaggi registrati, le etichette DOM, gli URL sanitizzati, le censure PII e i file esportati (PDF, HTML, Markdown, ZIP, JSON) vengono elaborati e salvati <strong>esclusivamente sul tuo dispositivo</strong> nel database locale IndexedDB del browser.',
       priv_s2_li2:
-        '<strong>Non</strong> integriamo analytics, traccianti o script pubblicitari di terze parti.',
-      priv_s3_h2: 'Verifica della Chiave di Licenza',
-      priv_s3_p:
-        'Il pagamento e la fatturazione di StepVault Pro sono gestiti dal nostro Merchant of Record, <strong>Polar.sh</strong>. Durante l\'attivazione o la verifica di una licenza Pro, vengono inviati alle API di Polar esclusivamente il codice della chiave e un\'etichetta identificativa dell\'estensione.',
-      priv_s4_h2: 'Contatti',
+        '<strong>Zero Raccolta Cloud:</strong> <strong>Non</strong> raccogliamo, trasmettiamo, leggiamo né conserviamo cronologia di navigazione, screenshot, dati inseriti nei form o contenuti delle guide su alcun server. I campi password, OTP, CVV e API token vengono mascherati alla fonte (<code>••••••••</code>) e i parametri segreti negli URL vengono oscurati automaticamente.',
+      priv_s2_li3:
+        '<strong>Isolamento di Rete nel Piano Free:</strong> StepVault Free non effettua <strong>alcuna</strong> richiesta di rete verso l\'esterno.',
+      priv_s3_h2: '3. Finalità, Basi Giuridiche e Destinatari Esterni (Art. 6 e Art. 13 GDPR)',
+      priv_s3_li1:
+        '<strong>Acquisto Pro e Fatturazione (Art. 6, par. 1, lett. b e c GDPR):</strong> Gli acquisti di StepVault Pro sono gestiti dal nostro Merchant of Record, <strong>Polar Software Inc. (Polar.sh)</strong>, che tratta in autonomia i dati di pagamento, l\'email di fatturazione e gli adempimenti fiscali/IVA di legge.',
+      priv_s3_li2:
+        '<strong>Attivazione e Verifica Licenza Pro (Art. 6, par. 1, lett. b e f GDPR):</strong> Quando attivi o verifichi una chiave Pro, l\'estensione comunica in HTTPS unicamente con <code>api.polar.sh</code> (vincolo imposto dalla Content Security Policy del browser), inviando solo il codice chiave, l\'ID organizzazione, l\'ID attivazione e un\'etichetta generica per far rispettare il limite di 3 browser per licenza.',
+      priv_s3_li3:
+        '<strong>Hosting del Sito e Assistenza (Art. 6, par. 1, lett. b e f GDPR):</strong> Questo sito statico è ospitato su <strong>GitHub Pages</strong> (GitHub Inc.), che tratta i normali log tecnici HTTP (indirizzo IP) per sicurezza ed erogazione del sito. Le email inviate volontariamente a <a class="accent-link" href="mailto:giuseppecaut57@gmail.com">giuseppecaut57@gmail.com</a> sono trattate al solo fine di rispondere alla richiesta.',
+      priv_s4_h2: '4. Cookie, Local Storage e Assenza di Traccianti (Art. 5, par. 3 Direttiva ePrivacy)',
       priv_s4_p:
-        'Domande? Scrivici a <a class="accent-link" href="mailto:giuseppecaut57@gmail.com">giuseppecaut57@gmail.com</a>.',
+        'Né l\'estensione StepVault né questo sito web utilizzano cookie di profilazione, analytics, pixel pubblicitari o CDN esterni per i font (vengono usati solo font di sistema locali, evitando qualsiasi cessione dell\'indirizzo IP a terzi). Su questo sito la preferenza tecnica <code>localStorage</code> (<code>stepvault_site_lang</code>) viene salvata <strong>solo</strong> se clicchi esplicitamente sul selettore lingua EN/IT.',
+      priv_s5_h2: '5. Trasferimenti Extra-UE e Tempi di Conservazione (Art. 13, par. 2, lett. a e Artt. 44–49 GDPR)',
+      priv_s5_p:
+        'Qualora Polar Software Inc. o GitHub Inc. trattino dati tecnici o fiscali negli Stati Uniti, il trasferimento avviene sulla base dell\'<strong>EU-U.S. Data Privacy Framework (DPF)</strong> e/o delle <strong>Clausole Contrattuali Tipo (SCC, Art. 46 GDPR)</strong> della Commissione Europea. Le guide locali restano sul tuo dispositivo finché non le cancelli (tramite il pulsante interno <em>Privacy &amp; GDPR → Delete All Data</em> o disinstallando l\'estensione). I documenti fiscali sono conservati da Polar.sh per i termini di legge; le email di supporto vengono cancellate entro 12 mesi.',
+      priv_s6_h2: '6. Diritti dell\'Interessato e Reclamo al Garante (Artt. 15–22 e Art. 77 GDPR)',
+      priv_s6_p:
+        'Ai sensi del GDPR hai diritto di <strong>accesso (Art. 15)</strong>, <strong>rettifica (Art. 16)</strong>, <strong>cancellazione / "diritto all\'oblio" (Art. 17)</strong>, <strong>limitazione (Art. 18)</strong>, <strong>portabilità dei dati (Art. 20)</strong> e <strong>opposizione (Art. 21)</strong>. Per le guide salvate in locale puoi esercitare immediatamente la portabilità (export JSON/ZIP) e la cancellazione totale direttamente dal pannello <em>Privacy &amp; GDPR Controls</em> dell\'estensione. Per dati relativi a licenze o assistenza scrivi a <a class="accent-link" href="mailto:giuseppecaut57@gmail.com">giuseppecaut57@gmail.com</a>. Hai inoltre il diritto di proporre reclamo all\'Autorità di controllo competente (in Italia: <em>Garante per la protezione dei dati personali</em> — <a class="accent-link" href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">garanteprivacy.it</a>).',
+      priv_s7_h2: '7. Responsabilità dell\'Utente nella Registrazione di Dati di Terzi',
+      priv_s7_p:
+        'Quando documenti procedure che mostrano dati personali di clienti, dipendenti o terzi, agisci in qualità di titolare autonomo dei file esportati. Verifica sempre gli screenshot e applica gli strumenti irreversibili di pixelatura/oscuramento di StepVault prima di condividere all\'esterno guide in PDF, HTML o Markdown.',
 
       terms_h1: 'Termini di Servizio e Politica di Rimborso',
       terms_s1_h2: 'Licenza d\'Uso',
@@ -455,7 +485,7 @@
     return nav.indexOf('it') === 0 ? 'it' : 'en';
   }
 
-  function applyLanguage(lang) {
+  function applyLanguage(lang, persistChoice) {
     var safeLang = lang === 'it' ? 'it' : 'en';
     var dict = TRANSLATIONS[safeLang];
     if (!dict) return;
@@ -493,10 +523,12 @@
       btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     }
 
-    try {
-      localStorage.setItem(STORAGE_KEY, safeLang);
-    } catch (_e) {
-      // Ignore storage restrictions
+    if (persistChoice) {
+      try {
+        localStorage.setItem(STORAGE_KEY, safeLang);
+      } catch (_e) {
+        // Ignore storage restrictions
+      }
     }
   }
 
@@ -506,11 +538,11 @@
       buttons[i].addEventListener('click', function (e) {
         var chosen = e.currentTarget.getAttribute('data-set-lang');
         if (chosen === 'en' || chosen === 'it') {
-          applyLanguage(chosen);
+          applyLanguage(chosen, true);
         }
       });
     }
-    applyLanguage(detectInitialLanguage());
+    applyLanguage(detectInitialLanguage(), false);
   }
 
   if (typeof window !== 'undefined') {
