@@ -11,6 +11,20 @@
   <link rel="alternate" hreflang="it" href="https://giuseeee88.github.io/StepVault/privacy.html?lang=it" />
   <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
   <link rel="alternate icon" type="image/png" href="./assets/favicon.png" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('stepvault_site_theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+          return;
+        }
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (_e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -21,9 +35,20 @@
         <span>StepVault</span>
         <span class="local-pill local-pill-sm" data-i18n="nav_pill">Local</span>
       </a>
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button type="button" class="lang-btn active" data-set-lang="en" aria-pressed="true">EN</button>
-        <button type="button" class="lang-btn" data-set-lang="it" aria-pressed="false">IT</button>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-btn active" data-set-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" data-set-lang="it" aria-pressed="false">IT</button>
+        </div>
+        <button type="button" class="theme-toggle" id="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+          </svg>
+        </button>
       </div>
     </div>
   </header>

@@ -1,5 +1,6 @@
 (function () {
   var STORAGE_KEY = 'stepvault_site_lang';
+  var THEME_KEY = 'stepvault_site_theme';
 
   var TRANSLATIONS = {
     en: {
@@ -17,6 +18,8 @@
       nav_pricing: 'Pricing',
       nav_faq: 'FAQ',
       nav_cta: 'Get Pro — €19',
+      theme_to_dark: 'Switch to dark theme',
+      theme_to_light: 'Switch to light theme',
 
       hero_pill: 'Chrome, Edge, Brave & Firefox • Zero Cloud Uploads • No Subscriptions',
       hero_title: 'Turn any browser workflow into a clean, redacted SOP in 60 seconds.',
@@ -225,7 +228,7 @@
         '<strong>Website Hosting &amp; Support (Art. 6(1)(b) &amp; 6(1)(f) GDPR):</strong> This static website is hosted on <strong>GitHub Pages</strong> (GitHub Inc.), which processes standard technical HTTP logs (IP address) for security and delivery. Support emails sent voluntarily to <a class="accent-link" href="mailto:giuseppecaut57@gmail.com">giuseppecaut57@gmail.com</a> are used solely to reply to your inquiry.',
       priv_s4_h2: '4. Cookies, Local Storage & Zero Trackers (ePrivacy Art. 5(3))',
       priv_s4_p:
-        'Neither the StepVault extension nor this website uses profiling cookies, analytics trackers, advertising pixels, or external font CDNs (only local system fonts are used, preventing IP leaks). On this website, a technical <code>localStorage</code> preference (<code>stepvault_site_lang</code>) is saved <strong>only</strong> if you explicitly click the EN/IT language switcher.',
+        'Neither the StepVault extension nor this website uses profiling cookies, analytics trackers, advertising pixels, or external font CDNs (only local system fonts are used, preventing IP leaks). On this website, technical <code>localStorage</code> preferences (<code>stepvault_site_lang</code> and <code>stepvault_site_theme</code>) are saved <strong>only</strong> if you explicitly click the EN/IT language switcher or the light/dark theme toggle.',
       priv_s5_h2: '5. International Transfers & Data Retention (Art. 13(2)(a) & Art. 44–49 GDPR)',
       priv_s5_p:
         'Where Polar Software Inc. or GitHub Inc. process technical or billing data in the United States, transfers rely on the <strong>EU-U.S. Data Privacy Framework (DPF)</strong> and/or European Commission <strong>Standard Contractual Clauses (SCCs, Art. 46 GDPR)</strong>. Local guides remain on your device until you delete them (via the in-app <em>Privacy &amp; GDPR → Delete All Data</em> button or by uninstalling the extension). Billing records are retained by Polar.sh for the statutory tax period; support emails are deleted within 12 months.',
@@ -266,6 +269,8 @@
       nav_pricing: 'Prezzi',
       nav_faq: 'FAQ',
       nav_cta: 'Passa a Pro — €19',
+      theme_to_dark: 'Attiva tema scuro',
+      theme_to_light: 'Attiva tema chiaro',
 
       hero_pill: 'Estensione Chrome, Edge, Brave e Firefox • Zero Cloud • Nessun Abbonamento',
       hero_title:
@@ -475,7 +480,7 @@
         '<strong>Hosting del Sito e Assistenza (Art. 6, par. 1, lett. b e f GDPR):</strong> Questo sito statico è ospitato su <strong>GitHub Pages</strong> (GitHub Inc.), che tratta i normali log tecnici HTTP (indirizzo IP) per sicurezza ed erogazione del sito. Le email inviate volontariamente a <a class="accent-link" href="mailto:giuseppecaut57@gmail.com">giuseppecaut57@gmail.com</a> sono trattate al solo fine di rispondere alla richiesta.',
       priv_s4_h2: '4. Cookie, Local Storage e Assenza di Traccianti (Art. 5, par. 3 Direttiva ePrivacy)',
       priv_s4_p:
-        'Né l\'estensione StepVault né questo sito web utilizzano cookie di profilazione, analytics, pixel pubblicitari o CDN esterni per i font (vengono usati solo font di sistema locali, evitando qualsiasi cessione dell\'indirizzo IP a terzi). Su questo sito la preferenza tecnica <code>localStorage</code> (<code>stepvault_site_lang</code>) viene salvata <strong>solo</strong> se clicchi esplicitamente sul selettore lingua EN/IT.',
+        'Né l\'estensione StepVault né questo sito web utilizzano cookie di profilazione, analytics, pixel pubblicitari o CDN esterni per i font (vengono usati solo font di sistema locali, evitando qualsiasi cessione dell\'indirizzo IP a terzi). Su questo sito le preferenze tecniche <code>localStorage</code> (<code>stepvault_site_lang</code> e <code>stepvault_site_theme</code>) vengono salvate <strong>solo</strong> se clicchi esplicitamente sul selettore lingua EN/IT o sul pulsante tema chiaro/scuro.',
       priv_s5_h2: '5. Trasferimenti Extra-UE e Tempi di Conservazione (Art. 13, par. 2, lett. a e Artt. 44–49 GDPR)',
       priv_s5_p:
         'Qualora Polar Software Inc. o GitHub Inc. trattino dati tecnici o fiscali negli Stati Uniti, il trasferimento avviene sulla base dell\'<strong>EU-U.S. Data Privacy Framework (DPF)</strong> e/o delle <strong>Clausole Contrattuali Tipo (SCC, Art. 46 GDPR)</strong> della Commissione Europea. Le guide locali restano sul tuo dispositivo finché non le cancelli (tramite il pulsante interno <em>Privacy e GDPR → Elimina tutti i dati</em> o disinstallando l\'estensione). I documenti fiscali sono conservati da Polar.sh per i termini di legge; le email di supporto vengono cancellate entro 12 mesi.',
@@ -521,8 +526,66 @@
     return nav.indexOf('it') === 0 ? 'it' : 'en';
   }
 
+  var currentLang = 'en';
+
+  function getActiveTheme() {
+    return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  }
+
+  function updateThemeButtonsUi() {
+    var isDark = getActiveTheme() === 'dark';
+    var dict = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
+    var label = isDark ? dict.theme_to_light : dict.theme_to_dark;
+    var toggles = document.querySelectorAll('[data-theme-toggle]');
+    for (var i = 0; i < toggles.length; i++) {
+      toggles[i].setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      toggles[i].setAttribute('aria-label', label);
+      toggles[i].setAttribute('title', label);
+    }
+  }
+
+  function setTheme(theme, persistChoice) {
+    var safeTheme = theme === 'dark' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', safeTheme);
+    if (persistChoice) {
+      try {
+        localStorage.setItem(THEME_KEY, safeTheme);
+      } catch (_e) {
+        // Ignore storage restrictions
+      }
+    }
+    updateThemeButtonsUi();
+  }
+
+  function initThemeToggle() {
+    try {
+      var savedTheme = localStorage.getItem(THEME_KEY);
+      if (savedTheme === 'dark' || savedTheme === 'light') {
+        setTheme(savedTheme, false);
+      } else if (
+        typeof window.matchMedia === 'function' &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      ) {
+        setTheme('dark', false);
+      } else {
+        updateThemeButtonsUi();
+      }
+    } catch (_e) {
+      updateThemeButtonsUi();
+    }
+
+    var toggles = document.querySelectorAll('[data-theme-toggle]');
+    for (var i = 0; i < toggles.length; i++) {
+      toggles[i].addEventListener('click', function () {
+        var next = getActiveTheme() === 'dark' ? 'light' : 'dark';
+        setTheme(next, true);
+      });
+    }
+  }
+
   function applyLanguage(lang, persistChoice) {
     var safeLang = lang === 'it' ? 'it' : 'en';
+    currentLang = safeLang;
     var dict = TRANSLATIONS[safeLang];
     if (!dict) return;
 
@@ -572,6 +635,7 @@
         // Ignore storage restrictions
       }
     }
+    updateThemeButtonsUi();
   }
 
   function initMobileMenu() {
@@ -605,6 +669,7 @@
     }
     initMobileMenu();
     applyLanguage(detectInitialLanguage(), false);
+    initThemeToggle();
   }
 
   if (typeof window !== 'undefined') {
