@@ -102,8 +102,8 @@ a {
 .nav-links-desktop {
   display: flex;
   align-items: center;
-  gap: 20px;
-  font-size: 13.5px;
+  gap: 15px;
+  font-size: 13px;
   font-weight: 600;
 }
 
@@ -245,18 +245,23 @@ html[data-theme="dark"] .nav-theme-btn .icon-sun {
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 4px;
 }
 
 .mobile-nav-links a {
   display: block;
-  padding: 10px 12px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  padding: 10px 16px;
   border-radius: 10px;
   color: #e2e8f0;
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
-  transition: background 0.15s;
+  transition: background 0.15s, color 0.15s;
 }
 
 .mobile-nav-links a:hover {
@@ -394,56 +399,116 @@ html[data-theme="dark"] .nav-theme-btn .icon-sun {
   font-weight: 500;
 }
 
-.editor-frame {
-  max-width: 840px;
+.download-section {
+  max-width: 780px;
   margin: 0 auto;
   background: #ffffff;
   border: 1px solid var(--slate-200);
-  border-radius: 16px;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
-  overflow: hidden;
-  text-align: left;
+  border-radius: 18px;
+  padding: 28px 28px 26px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+  text-align: center;
+  scroll-margin-top: 80px;
 }
 
-.editor-topbar {
+.download-title {
+  margin: 0 0 8px;
+  font-size: clamp(20px, 2.8vw, 25px);
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  line-height: 1.22;
+}
+
+.download-sub {
+  margin: 0 auto 22px;
+  max-width: 560px;
+  font-size: 14.5px;
+  color: var(--slate-600);
+  line-height: 1.55;
+}
+
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.download-browser-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 9px 16px;
-  border-bottom: 1px solid var(--slate-200);
+  gap: 13px;
+  padding: 15px 18px;
   background: var(--slate-50);
+  border: 1.5px solid var(--slate-200);
+  border-radius: 13px;
+  text-decoration: none;
+  text-align: left;
+  color: var(--slate-900);
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s, transform 0.1s;
 }
 
-.example-caption {
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+.download-browser-btn:hover {
+  background: #ffffff;
+  border-color: var(--rose-600);
+  box-shadow: 0 8px 22px rgba(225, 29, 72, 0.1);
+}
+
+.download-browser-btn:active {
+  transform: scale(0.99);
+}
+
+.dl-browser-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: var(--rose-50);
+  color: var(--rose-600);
+  border: 1px solid var(--rose-200);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dl-btn-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.dl-btn-main {
+  font-size: 14.5px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--slate-900);
+}
+
+.dl-btn-meta {
+  font-size: 12px;
+  font-weight: 500;
   color: var(--slate-500);
 }
 
-.editor-canvas {
-  background: var(--slate-50);
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.step-card {
-  background: #ffffff;
-  border: 1px solid var(--slate-200);
-  border-radius: 14px;
-  padding: 16px 18px;
-}
-
-.step-head {
-  display: flex;
+.dl-btn-arrow {
+  color: var(--rose-600);
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  font-size: 14.5px;
-  margin-bottom: 12px;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.download-pending-msg {
+  margin: 16px auto 0;
+  padding: 11px 16px;
+  border-radius: 10px;
+  background: var(--rose-50);
+  border: 1px solid var(--rose-200);
+  color: var(--rose-700);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .step-num-badge {
@@ -458,70 +523,6 @@ html[data-theme="dark"] .nav-theme-btn .icon-sun {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-}
-
-.step-callout-mini {
-  background: var(--emerald-50);
-  border-left: 3px solid var(--emerald-600);
-  color: #065f46;
-  font-size: 12.5px;
-  padding: 7px 11px;
-  border-radius: 6px;
-  margin-bottom: 12px;
-  font-weight: 500;
-}
-
-.shot-box {
-  position: relative;
-  background: var(--slate-100);
-  border: 1px solid var(--slate-200);
-  border-radius: 10px;
-  padding: 16px 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.shot-fields {
-  font-size: 13px;
-  color: var(--slate-700);
-  line-height: 1.7;
-}
-
-.pixelated {
-  display: inline-block;
-  background: repeating-linear-gradient(90deg, #cbd5e1 0 5px, #94a3b8 5px 10px);
-  color: transparent;
-  border-radius: 4px;
-  padding: 1px 6px;
-  user-select: none;
-}
-
-.target-btn {
-  position: relative;
-  background: var(--slate-900);
-  color: #ffffff;
-  font-size: 12.5px;
-  font-weight: 700;
-  padding: 8px 16px;
-  border-radius: 8px;
-  outline: 2.5px solid var(--rose-500);
-  outline-offset: 2px;
-  white-space: nowrap;
-}
-
-.click-dot {
-  position: absolute;
-  right: -7px;
-  bottom: -7px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--rose-500);
-  border: 2.5px solid #ffffff;
-  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.3);
 }
 
 /* ===========================
@@ -1027,56 +1028,54 @@ html[data-theme="dark"] .btn-secondary:hover {
   background: #334155;
 }
 
-html[data-theme="dark"] .editor-frame {
+html[data-theme="dark"] .download-section {
   background: #0f172a;
   border-color: #1e293b;
-  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.5);
 }
 
-html[data-theme="dark"] .editor-topbar {
-  background: #0b1120;
-  border-bottom-color: #1e293b;
-}
-
-html[data-theme="dark"] .example-caption {
-  color: #94a3b8;
-}
-
-html[data-theme="dark"] .editor-canvas {
-  background: #060911;
-}
-
-html[data-theme="dark"] .step-card {
-  background: #0f172a;
-  border-color: #1e293b;
-}
-
-html[data-theme="dark"] .step-head {
+html[data-theme="dark"] .download-title {
   color: #f8fafc;
 }
 
-html[data-theme="dark"] .step-callout-mini {
-  background: rgba(16, 185, 129, 0.13);
-  border-left-color: #10b981;
-  color: #a7f3d0;
+html[data-theme="dark"] .download-sub {
+  color: #cbd5e1;
 }
 
-html[data-theme="dark"] .shot-box {
+html[data-theme="dark"] .download-browser-btn {
   background: #162033;
   border-color: #28354d;
+  color: #f8fafc;
 }
 
-html[data-theme="dark"] .shot-fields {
-  color: #e2e8f0;
+html[data-theme="dark"] .download-browser-btn:hover {
+  background: #1e293b;
+  border-color: #f43f5e;
+  box-shadow: 0 10px 26px rgba(244, 63, 94, 0.18);
 }
 
-html[data-theme="dark"] .pixelated {
-  background: repeating-linear-gradient(90deg, #475569 0 5px, #64748b 5px 10px);
+html[data-theme="dark"] .dl-browser-icon {
+  background: rgba(244, 63, 94, 0.15);
+  color: #fb7185;
+  border-color: rgba(244, 63, 94, 0.32);
 }
 
-html[data-theme="dark"] .target-btn {
-  background: #020617;
-  color: #ffffff;
+html[data-theme="dark"] .dl-btn-main {
+  color: #f8fafc;
+}
+
+html[data-theme="dark"] .dl-btn-meta {
+  color: #94a3b8;
+}
+
+html[data-theme="dark"] .dl-btn-arrow {
+  color: #fb7185;
+}
+
+html[data-theme="dark"] .download-pending-msg {
+  background: rgba(244, 63, 94, 0.14);
+  border-color: rgba(244, 63, 94, 0.34);
+  color: #fecdd3;
 }
 
 html[data-theme="dark"] .section-eyebrow {
@@ -1195,7 +1194,7 @@ html[data-theme="dark"] .accent-link {
 /* ===========================
    Multi-Tier Responsive Breakpoints (PC / Tablet / Mobile)
    =========================== */
-@media (max-width: 960px) {
+@media (max-width: 980px) {
   .nav-links-desktop {
     display: none;
   }
@@ -1215,7 +1214,8 @@ html[data-theme="dark"] .accent-link {
 
 @media (max-width: 720px) {
   .grid-2,
-  .pricing-grid {
+  .pricing-grid,
+  .download-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1260,16 +1260,12 @@ html[data-theme="dark"] .accent-link {
     width: 100%;
   }
 
-  .editor-canvas {
-    padding: 12px;
+  .download-section {
+    padding: 22px 16px 20px;
   }
 
-  .step-card {
-    padding: 14px;
-  }
-
-  .shot-box {
-    padding: 14px;
+  .download-browser-btn {
+    padding: 14px 14px;
   }
 
   .price-card {
@@ -1302,6 +1298,8 @@ html[data-theme="dark"] .accent-link {
 
   .mobile-nav-cta {
     display: inline-flex;
+    justify-content: center;
+    max-width: 320px;
     color: #ffffff !important;
   }
 }

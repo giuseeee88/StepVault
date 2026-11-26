@@ -2,6 +2,12 @@
   var STORAGE_KEY = 'stepvault_site_lang';
   var THEME_KEY = 'stepvault_site_theme';
 
+  // Direct extension store/download links (fill in once published):
+  var STORE_URLS = {
+    chrome: '',
+    firefox: '',
+  };
+
   var TRANSLATIONS = {
     en: {
       page_title_home:
@@ -12,6 +18,7 @@
       page_title_terms: 'Terms & Refund Policy — StepVault',
 
       nav_pill: 'Local',
+      nav_download: 'Download',
       nav_how: 'How It Works',
       nav_use_cases: 'Use Cases',
       nav_why_pro: 'Why Pro',
@@ -28,15 +35,20 @@
       hero_subtitle:
         'Click through your task once. <strong>StepVault</strong> captures smart-zoomed screenshots, writes clear step instructions in English or Italian, blurs sensitive data on your device, and exports client-ready <strong>PDF, HTML &amp; Markdown</strong> guides.',
       hero_cta_primary: 'Buy Pro Lifetime License — €19',
-      hero_cta_secondary: 'See How It Works',
+      hero_cta_secondary: 'Download Free Extension',
       hero_trust:
         'Pay once, own forever • Up to 3 browsers per key • 14-day money-back guarantee via Polar.sh',
 
-      mock_example_label: 'Example guide generated with StepVault',
-      mock_step_title: 'Click the "Export CSV Report" button',
-      mock_tip:
-        '<strong>Tip:</strong> Confirm the quarterly billing filter before downloading the report.',
-      mock_customer: 'Customer:',
+      dl_eyebrow: 'Direct Browser Install',
+      dl_title: 'Download StepVault Extension',
+      dl_sub:
+        'Free forever to record & redact locally. Choose your browser below — zero accounts, zero cloud uploads.',
+      dl_chrome_btn: 'Download for Chrome & Edge',
+      dl_chrome_sub: 'Chrome, Edge, Brave • Manifest V3',
+      dl_firefox_btn: 'Download for Firefox',
+      dl_firefox_sub: 'Mozilla Firefox Add-on',
+      dl_pending_notice:
+        'StepVault is currently awaiting official store publication — the direct download link will be enabled here shortly.',
 
       how_eyebrow: 'How StepVault Works',
       how_title: 'From live browser clicks to polished documentation in 4 steps',
@@ -155,7 +167,7 @@
       free_f3: 'Manual blur, blackout & highlight canvas tools',
       free_f4: 'Copy step instructions as plain Markdown',
       free_f5: 'Local IndexedDB vault & JSON backup/import',
-      free_btn: 'Available for Chrome & Firefox',
+      free_btn: 'Download Free Extension',
 
       pro_popular: 'Best Value • Lifetime',
       pro_tier: 'StepVault Pro — Lifetime License',
@@ -262,6 +274,7 @@
       page_title_terms: 'Termini di Servizio e Rimborsi — StepVault',
 
       nav_pill: 'Locale',
+      nav_download: 'Scarica',
       nav_how: 'Come funziona',
       nav_use_cases: 'Casi d\'uso',
       nav_why_pro: 'Perché Pro',
@@ -279,15 +292,20 @@
       hero_subtitle:
         'Esegui l\'operazione una sola volta. <strong>StepVault</strong> acquisisce screenshot con zoom automatico, scrive le istruzioni in italiano o inglese, sfoca i dati sensibili direttamente sul tuo PC ed esporta guide impeccabili in <strong>PDF, HTML e Markdown</strong>.',
       hero_cta_primary: 'Acquista Licenza a Vita Pro — €19',
-      hero_cta_secondary: 'Scopri come funziona',
+      hero_cta_secondary: 'Scarica Estensione Gratis',
       hero_trust:
         'Paghi una volta, tuo per sempre • Fino a 3 browser per licenza • Rimborso garantito 14 giorni via Polar.sh',
 
-      mock_example_label: 'Esempio di guida generata con StepVault',
-      mock_step_title: 'Clicca sul pulsante "Export CSV Report"',
-      mock_tip:
-        '<strong>Consiglio:</strong> Controlla che il trimestre contabile sia corretto prima di scaricare il file.',
-      mock_customer: 'Cliente:',
+      dl_eyebrow: 'Installazione Diretta',
+      dl_title: 'Scarica l\'Estensione StepVault',
+      dl_sub:
+        'Gratuita per sempre per registrare e oscurare in locale. Scegli il tuo browser qui sotto — zero account, zero caricamenti cloud.',
+      dl_chrome_btn: 'Scarica per Chrome ed Edge',
+      dl_chrome_sub: 'Chrome, Edge, Brave • Manifest V3',
+      dl_firefox_btn: 'Scarica per Firefox',
+      dl_firefox_sub: 'Componente aggiuntivo Mozilla Firefox',
+      dl_pending_notice:
+        'StepVault è attualmente in fase di pubblicazione sugli store ufficiali: il link per il download diretto sarà attivo a breve.',
 
       how_eyebrow: 'Come Funziona StepVault',
       how_title: 'Dai clic nel browser a un manuale pronto da consegnare in 4 passaggi',
@@ -406,7 +424,7 @@
       free_f3: 'Strumenti manuali Sfoca, Oscura ed Evidenzia',
       free_f4: 'Copia dei passaggi come testo Markdown',
       free_f5: 'Archivio locale IndexedDB e backup JSON',
-      free_btn: 'Disponibile per Chrome e Firefox',
+      free_btn: 'Scarica Estensione Gratis',
 
       pro_popular: 'Più Scelto • A Vita',
       pro_tier: 'StepVault Pro — Licenza a Vita',
@@ -658,6 +676,38 @@
     }
   }
 
+  function initDownloadLinks() {
+    var links = document.querySelectorAll('[data-store-link]');
+    var pendingNotice = document.getElementById('download-pending-msg');
+
+    for (var i = 0; i < links.length; i++) {
+      (function (anchor) {
+        var browserKey = anchor.getAttribute('data-store-link');
+        var targetUrl = browserKey && STORE_URLS[browserKey] ? STORE_URLS[browserKey].trim() : '';
+
+        if (targetUrl) {
+          anchor.setAttribute('href', targetUrl);
+          anchor.setAttribute('target', '_blank');
+          anchor.setAttribute('rel', 'noopener noreferrer');
+        } else {
+          anchor.addEventListener('click', function (e) {
+            var liveUrl = browserKey && STORE_URLS[browserKey] ? STORE_URLS[browserKey].trim() : '';
+            if (liveUrl) {
+              anchor.setAttribute('href', liveUrl);
+              anchor.setAttribute('target', '_blank');
+              anchor.setAttribute('rel', 'noopener noreferrer');
+              return;
+            }
+            e.preventDefault();
+            if (pendingNotice) {
+              pendingNotice.hidden = false;
+            }
+          });
+        }
+      })(links[i]);
+    }
+  }
+
   function initSite() {
     var buttons = document.querySelectorAll('[data-set-lang]');
     for (var i = 0; i < buttons.length; i++) {
@@ -669,12 +719,14 @@
       });
     }
     initMobileMenu();
+    initDownloadLinks();
     applyLanguage(detectInitialLanguage(), false);
     initTheme();
   }
 
   if (typeof window !== 'undefined') {
     window.STEPVAULT_TRANSLATIONS = TRANSLATIONS;
+    window.STEPVAULT_STORE_URLS = STORE_URLS;
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initSite);
     } else {
